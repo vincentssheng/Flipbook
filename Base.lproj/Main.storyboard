@@ -35,9 +35,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gE6-ZH-cca">
-                                                    <rect key="frame" x="-108" y="-19" width="240" height="128"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gE6-ZH-cca">
+                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                                 </imageView>
                                                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="3Rg-0J-hnp">
                                                     <rect key="frame" x="35" y="35" width="20" height="20"/>
@@ -47,11 +46,16 @@
                                         <color key="backgroundColor" red="0.20000000000000001" green="0.21176470589999999" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="3Rg-0J-hnp" firstAttribute="centerX" secondItem="ynO-sw-8Km" secondAttribute="centerX" id="BIl-2B-GQ7"/>
+                                            <constraint firstAttribute="bottom" secondItem="gE6-ZH-cca" secondAttribute="bottom" id="GO9-Rx-d5d"/>
+                                            <constraint firstItem="gE6-ZH-cca" firstAttribute="leading" secondItem="ynO-sw-8Km" secondAttribute="leading" id="SEt-fd-377"/>
                                             <constraint firstItem="3Rg-0J-hnp" firstAttribute="centerY" secondItem="ynO-sw-8Km" secondAttribute="centerY" id="jJN-d7-w91"/>
+                                            <constraint firstAttribute="trailing" secondItem="gE6-ZH-cca" secondAttribute="trailing" id="len-OE-JRk"/>
+                                            <constraint firstItem="gE6-ZH-cca" firstAttribute="top" secondItem="ynO-sw-8Km" secondAttribute="top" id="rqv-Nn-PSL"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="imageView" destination="gE6-ZH-cca" id="PUj-KV-Qeq"/>
                                             <outlet property="spinner" destination="3Rg-0J-hnp" id="5MI-Jd-unq"/>
+                                            <segue destination="nLe-AS-0DH" kind="show" identifier="showPhoto" id="6QG-OI-93a"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -74,6 +78,30 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="968.11594202898561" y="20.758928571428569"/>
+        </scene>
+        <!--Photo Info View Controller-->
+        <scene sceneID="iHE-lw-zwO">
+            <objects>
+                <viewController id="nLe-AS-0DH" customClass="PhotoInfoViewController" customModule="Photorama" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DJx-LP-9c6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yo8-IX-G2l">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="ntt-61-fiM"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="Yo8-IX-G2l" id="sIV-Ps-JNv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qmc-1k-rXC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1627.536231884058" y="21.428571428571427"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Nmu-gZ-sOs">
