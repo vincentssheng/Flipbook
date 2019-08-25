@@ -8,6 +8,12 @@
 
 import Foundation
 
+extension Photo: Equatable {
+    static func == (lhs: Photo, rhs: Photo) -> Bool {
+        return lhs.photoID == rhs.photoID
+    }
+}
+
 class Photo {
     let title: String
     let remoteURL: URL
