@@ -55,6 +55,16 @@ class PhotoStore {
     }
     
     func fetchImage(for photo: Photo, completion: @escaping (ImageResult) -> Void) {
+        
+        // Cache
+        let photoKey = photo.photoID
+        if let image = imageStore.image(forKey: photoKey) {
+            OperationQueue.main.addOperation {
+                completion(.success(image))
+            }
+            return
+        }
+        
         let photoURL = photo.remoteURL
         let request = URLRequest(url: photoURL)
         let task = session.dataTask(with: request) {
@@ -65,6 +75,7 @@ class PhotoStore {
             if case let .success(image) = result {
                 self.imageStore.setImage(image, forKey: photoKey)
             }
+            
             OperationQueue.main.addOperation {
                 completion(result)
             }
