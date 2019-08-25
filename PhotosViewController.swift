@@ -18,6 +18,9 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate {
         
         collectionView.dataSource = photoDataSource
         collectionView.delegate = self
+        collectionView.collectionViewLayout = FlipbookFlowLayout()
+        
+        
         store.fetchInterestingPhotos {
             (photosResult) -> Void in
             
