@@ -18,22 +18,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nLe-5Z-FHz">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
-                            </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="LuH-Bt-DCK">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0fw-ZJ-NJ6">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="UICollectionViewCell" id="ynO-sw-8Km">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                        <color key="backgroundColor" red="0.20000000000000001" green="0.21176470589999999" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nLe-5Z-FHz" secondAttribute="bottom" id="0Bv-bb-DEf"/>
-                            <constraint firstItem="nLe-5Z-FHz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JMX-MA-JXU"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nLe-5Z-FHz" secondAttribute="trailing" id="MdQ-MW-Kku"/>
-                            <constraint firstItem="nLe-5Z-FHz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="gjx-gw-4e3"/>
+                            <constraint firstItem="LuH-Bt-DCK" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="LwN-ST-GdP"/>
+                            <constraint firstAttribute="bottom" secondItem="LuH-Bt-DCK" secondAttribute="bottom" id="cs2-YR-0U5"/>
+                            <constraint firstAttribute="trailing" secondItem="LuH-Bt-DCK" secondAttribute="trailing" id="q6i-M7-yd6"/>
+                            <constraint firstItem="LuH-Bt-DCK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="tL1-Yh-86e"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Photorama" id="lAM-Qg-Jbe"/>
                     <connections>
-                        <outlet property="imageView" destination="nLe-5Z-FHz" id="2oW-ob-faa"/>
+                        <outlet property="collectionView" destination="LuH-Bt-DCK" id="RRv-8h-I3n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
