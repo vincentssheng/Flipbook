@@ -137,4 +137,12 @@ class PhotoStore {
             }
         }
     }
+    
+    func saveContextIfNeeded() {
+        let context = persistentContainer.viewContext
+        if context.hasChanges {
+            print("Save context")
+            try? context.save()
+        }
+    }
 }
